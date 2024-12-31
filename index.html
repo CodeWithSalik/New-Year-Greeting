@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="background"></div>
+    <div class="container">
+        <section id="main-content">
+            <h1>Happy New Year!</h1>
+            <button id="show-countdown">Let's Celebrate!</button>
+            <div id="countdown-container">
+                <h2>Countdown to 2025</h2>
+                <div id="countdown"></div>
+            </div>
+            <div id="greeting-area">
+                <div id="name-input-area">
+                    <input type="text" id="userName" placeholder="Enter your name">
+                    <button id="submit-name">Submit</button>
+                </div>
+                <div id="wish-input-area">
+                    <h2 id="greeting-message"></h2>
+                    <textarea id="userWish" placeholder="What's your wish for the New Year?"></textarea>
+                    <button id="submit-wish">Share Your Wish!</button>
+                </div>
+                <div id="final-message-area">
+                    <div id="final-message"></div>
+                    <div id="confetti"></div>
+                </div>
+            </div>
+        </section>
+        <footer class="signature">
+            <p>&copy; 2023 Pirzada Salik</p>
+        </footer>
+    </div>
+
+    <audio id="bgm" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.browser.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
