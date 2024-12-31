@@ -18,6 +18,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    min-height: 100vh; /* Ensure container takes full viewport height */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 #main-content {
@@ -25,6 +27,10 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    flex: 1; /* Allow main content to take available space */
+    display: flex;
+    justify-content: center; /* Center content vertically */
+    min-height: 100%;
 }
 h1 {
     font-family: 'Pacifico', cursive; /* Festive font for "Happy New Year" */
@@ -62,6 +68,9 @@ h1 {
     margin-bottom: 20px;
     display: none; /* Initially hidden */
 }
+#greeting-area {
+    width: 90%; /* Occupy most of the screen width */
+    max-width: 500px;}
 
 #greeting-area > div {
     margin-bottom: 20px;
@@ -77,6 +86,11 @@ h1 {
 
 #final-message-area {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
 }
 
 /* ... (rest of the styles - message content, etc. - remain the same) */
@@ -86,8 +100,9 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
     text-align: left;
-    max-width: 600px;
     margin: 0 auto;
+    max-width: 90%; /* Adjust max-width for smaller screens */
+    box-sizing: border-box;
 }
 
 .greeting {
@@ -184,4 +199,29 @@ input[type="text"]:focus,
 textarea:focus {
     box-shadow: 0 4px 10px rgba(165, 38, 16, 0.664);
     background-image: linear-gradient(to bottom right, #d1d9e6, #c0c8d0);
+}
+@media (max-width: 768px) { /* Styles for screens smaller than 768px (typical tablet breakpoint) */
+    h1 {
+        font-size: 2.5em; /* Smaller heading on mobile */
+    }
+    #countdown {
+        font-size: 2em;
+    }
+    input[type="text"],
+    textarea {
+      width: 95%;
+      font-size: 1em;
+    }
+    .message-content {
+        font-size: 0.9em; /* Smaller font size on mobile */
+    }
+}
+
+@media (max-width: 480px) { /* Styles for smaller mobile screens */
+    h1 {
+        font-size: 2em;
+    }
+    #countdown {
+        font-size: 1.5em;
+    }
 }
