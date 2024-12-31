@@ -3,35 +3,31 @@ body {
     background: linear-gradient(to bottom, #1a2a6c, #b21f1f, #fdbb2d);
     color: white;
     margin: 0;
-    overflow: hidden;
-    display: flex;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    display: flex; /* Use flexbox for the main layout */
     flex-direction: column;
-    min-height: 100vh;
     align-items: center; /* Center horizontally */
-    justify-content: center; /* Center Vertically */
+    justify-content: center; /* Center vertically */
+    min-height: 100vh;
 }
 
 .container {
-    flex: 1;
+    width: 90%; /* Occupy most of the screen width */
+    max-width: 600px; /* Set a maximum width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 20px;
-    min-height: 100vh; /* Ensure container takes full viewport height */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box;
 }
 
 #main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    flex: 1; /* Allow main content to take available space */
-    display: flex;
-    justify-content: center; /* Center content vertically */
-    min-height: 100%;
+    width: 100%; /* Important: Occupy full width of container */
 }
+
 h1 {
     font-family: 'Pacifico', cursive; /* Festive font for "Happy New Year" */
     font-size: 4em;
@@ -47,13 +43,14 @@ h1 {
 }
 
 #countdown-container {
-    font-size: 1.5rem;
-    font-family: 'Pacifico', cursive;
     display: none;
-    background-color: rgba(138, 53, 207, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(184, 35, 79, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+    margin-bottom: 20px; /* Add margin */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #countdown {
@@ -69,14 +66,19 @@ h1 {
     display: none; /* Initially hidden */
 }
 #greeting-area {
-    width: 90%; /* Occupy most of the screen width */
-    max-width: 500px;}
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #greeting-area > div {
+    width: 100%;
     margin-bottom: 20px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s, transform 0.8s;
+    box-sizing: border-box;
 }
 
 #greeting-area > div.active {
@@ -86,22 +88,21 @@ h1 {
 
 #final-message-area {
     position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
+    box-sizing: border-box;
 }
 
-/* ... (rest of the styles - message content, etc. - remain the same) */
 .message-content {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
     text-align: left;
-    margin: 0 auto;
-    max-width: 90%; /* Adjust max-width for smaller screens */
+    width: 100%; /* Occupy full width */
     box-sizing: border-box;
 }
 
